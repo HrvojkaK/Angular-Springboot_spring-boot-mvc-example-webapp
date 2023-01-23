@@ -17,8 +17,10 @@ export class AddMemberComponent implements OnInit {
   ngOnInit() {}
 
   saveMember(){
+    //if(!this.member){return} //i zovi dolje metodu samo ako je val ok
     this.memberService.createMember(this.member).subscribe((response)=>{
       console.log(response);
+
       this.router.navigate(['/member-list']);
     });
 
