@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Member } from 'src/app/model/member';
 import { MemberService } from 'src/app/service/member.service';
@@ -20,12 +21,14 @@ export class UpdateMemberComponent implements OnInit {
     this.memberService.getMember(this.id).subscribe((response:any)=>{ this.member=response; console.log(response); });
   }
 
-  saveMember(){
+  saveMember(form: NgForm){
+    if (form.invalid) {
+      return;
+    } //else:
     this.memberService.updateMember(this.member).subscribe((response)=>{
       console.log(response);
       this.router.navigate(['/member-list']);
     });
-
   }
 
 }
