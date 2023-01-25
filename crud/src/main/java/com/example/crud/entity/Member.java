@@ -25,18 +25,18 @@ public class Member {
 	private int id;
 	
 	@Column(name="first_name")
-	@NotEmpty
-	@Size(max = 10, message = "must not exceed 10 characters")
+//	@NotEmpty
+//	@Size(max = 10, message = "must not exceed 10 characters")
 	private String firstName;
 	
 	@Column(name="last_name")
-	@NotEmpty
-	@Size(max = 50, message = "must not exceed 50 characters")
+//	@NotEmpty
+//	@Size(max = 50, message = "must not exceed 50 characters")
 	private String lastName;
 	
 	@Column(name="email")
-	@NotEmpty
-	@Size(max = 50, message = "must not exceed 50 characters")
+//	@NotEmpty
+//	@Size(max = 50, message = "must not exceed 50 characters")
 	@Email(message="must be a valid email address")
 	private String email;
 	
